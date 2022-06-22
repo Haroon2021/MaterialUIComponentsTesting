@@ -11,7 +11,14 @@ import TextField from '@material-ui/core/TextField'
 
 import {makeStyles } from '@material-ui/core/styles'
 import 'fontsource-roboto';
-import { Typography } from '@material-ui/core';
+import {  Typography } from '@material-ui/core';
+// import Container from '@material-ui/core/Container';
+import Paper from '@material-ui/core/Paper'
+import Grid from '@material-ui/core/Grid'
+import AppBar from '@material-ui/core/AppBar'
+import Toolbar from '@material-ui/core/Toolbar'
+import IconButton from '@material-ui/core/IconButton'
+ import MenuIcon from '@material-ui/core/Menu'
 
 const useStyles = makeStyles({
   root: {
@@ -53,22 +60,40 @@ function App() {
   
       <div className="App">
         <header className="App-header">
-          <Typography variant='h2'>
+          <AppBar color="secondary">
+            <Toolbar>
+              <IconButton>
+                <MenuIcon />
+              </IconButton>
+              <Typography variant = 'h6'>
+                MUI Theming
+              </Typography>
+              <Button>
+                Login
+              </Button>
+            </Toolbar>
+          </AppBar>
+          <Typography variant='h2' component='div'>
             Welcome to MUI
           </Typography>
           <Typography variant='subtitle1'>
             Learn how to use MUI
           </Typography>
           <ButtonStyled />
-          <TextField
-          variant='filled'
-          color='secondary'
-          // type = 'date'  // useful to create a date field with a drop down
-          // type = 'time' // can set a time
-          type='email'
-          label="Email address"
-          placeholder="test@testing.com"
-          />
+
+          <Grid container spacing = {9} justify='center'>
+            <Grid item xs={3} sm={6}>
+              <Paper style = {{height: 75, width: '100%', }} />
+            </Grid>
+            <Grid item xs={3} sm={6}>
+              <Paper style = {{height: 75, width: '100%', }} />
+            </Grid>
+            <Grid item xs={3} sm={6}>
+              <Paper style = {{height: 75, wwidth: '100%', }} />
+            </Grid>
+            
+            
+            </Grid>
           <CheckboxExample />
           <ButtonGroup variant = "contained" color="primary">
             <Button 
